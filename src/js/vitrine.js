@@ -84,6 +84,22 @@ class Vitrine {
             Vitrine.ul.appendChild(li)
         })
     }
+
+    static pesquisarItens(pesquisa){
+        let pesquisaSecao = ['panificadora', 'frutas', 'bebidas']
+        let pesquisaArray = []
+        if(!pesquisaSecao.includes(pesquisa.toLowerCase())){
+            pesquisaArray = Vitrine.produtosArray.filter((prod) => prod.nome.toLowerCase().includes(pesquisa.toLowerCase()))
+        }else{
+            pesquisaArray = Vitrine.produtosArray.filter((prod) => prod.categoria.toLowerCase() == pesquisa.toLowerCase())
+        }
+        Vitrine.ul.innerHTML = ""
+        pesquisaArray.forEach(item => {
+            const li = Vitrine.criarTemplate(item)
+            Vitrine.ul.appendChild(li)
+        })
+    }
+
 }
 
 export { Vitrine }
