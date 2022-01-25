@@ -173,17 +173,15 @@ button {
 }
 
 .products__section__container{
-    margin: auto;
-    width: 300px;
 }
 
 .filters {
-    width: 300px;
     display: flex;
-    overflow-y: scroll;
+    overflow-y: none;
+    overflow-x: scroll;
     padding-bottom: 25px;
     flex-direction: row;
-    justify-content: space-between;
+    margin-left: 10px;
 }
 
 #filters--button_1 {
@@ -257,13 +255,12 @@ button {
 }
 
 .productList {
-    width: 300px;
+    margin-left: 10px;
     display: flex;
     flex-wrap: nowrap;
     overflow-y: scroll;
     flex-direction: row;
     justify-content: space-between;
-    border: mediumvioletred solid 2px;
 }
 
 .product {
@@ -336,10 +333,13 @@ button {
 }
 
 .product--description {
-    max-width: 300px;
-    white-space: wrap;
+    height: 48px;
+    max-height: 48px;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .product--addToCart {
