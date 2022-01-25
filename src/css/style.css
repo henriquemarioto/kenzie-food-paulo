@@ -167,7 +167,7 @@ body {
     align-items: center;
     justify-content: space-around;
     padding: 5px 15px 5px 15px;
-    font-size: var(--14px-size);
+    font-size: var(--12px-size);
     background-color: var(--color-primary-50);
 }
 
