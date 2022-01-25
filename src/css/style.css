@@ -170,12 +170,15 @@ button {
 
 .productsSection {
     width: 100%;
-    margin-top: 40px;
-    margin-left: 15px;
+}
+
+.products__section__container{
+    margin: auto;
+    width: 300px;
 }
 
 .filters {
-    width: 100%;
+    width: 300px;
     display: flex;
     overflow-y: scroll;
     padding-bottom: 25px;
@@ -266,8 +269,8 @@ button {
 .product {
     width: 280px;
     display: flex;
-    padding-right: 40px;
-    padding-bottom: 15px;
+    margin-right: 40px;
+    margin-bottom: 15px;
     flex-direction: column;
 }
 
@@ -315,15 +318,18 @@ button {
 .product--description {
     color: var(--Grey-3);
     font-size: var(--10px-size);
+    line-height: 16px;
 }
 
 .product--footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
 }
 
 .product--price {
-    padding-top: 20px;
+    text-align: center;
     color: var(--Grey-4);
     font-size: var(--10px-size);
     font-weight: var(--Bold-weight);
@@ -337,12 +343,16 @@ button {
 }
 
 .product--addToCart {
-    width: 15px;
-    height: 15px;
-    font-size: 20px;
+    width: 30px;
+    height: 30px;
     border-style: none;
-    border-radius: 100px;
+    border-radius: 100%;
     background-color: var(--color-secondary-50);
+    align-self: flex-end;
+}
+.product--addToCart img{
+    width: 10px;
+    height: 10px;
 }
 
 @media (min-width: 600px) {
