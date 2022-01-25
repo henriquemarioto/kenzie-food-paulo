@@ -377,7 +377,7 @@ button {
 
 .product--section {
     left: 15px;
-    bottom: -13px;
+    bottom: 18px;
     position: absolute;
     border-radius: 20px;
     display: flex;
@@ -436,8 +436,9 @@ button {
     height: 10px;
 }
 
-@media (min-width: 321px) {
+@media (min-width: 420px) {
     /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    
 }
 
 @media (min-width: 600px) {
