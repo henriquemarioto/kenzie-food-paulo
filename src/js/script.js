@@ -7,7 +7,6 @@ const button = document.querySelector('.searchBtn')
 
 Vitrine.produtosArray = await ApiRestaurante.buscaImagens()
 console.log(Vitrine.produtosArray)
-Vitrine.colocarItensNaVitrine()
 
 button.addEventListener('click', (evt) => {
     evt.preventDefault()
@@ -17,3 +16,13 @@ button.addEventListener('click', (evt) => {
 //Vitrine.ul.addEventListener('click', adicionarAoCarrinho)
 
 
+const iniciarSite = async () => {
+    Vitrine.produtosArray = await ApiRestaurante.buscaImagens()
+    Vitrine.colocarTodosItensNaVitrine()
+    Carrinho.preencherCarrinho()
+}
+iniciarSite()
+
+
+Vitrine.ul.addEventListener('click', Carrinho.adicionarAoCarrinho)
+Carrinho.ul.addEventListener('click', Carrinho.removeItemCarrinho)
