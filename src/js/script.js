@@ -6,4 +6,4 @@ Vitrine.produtosArray = await ApiRestaurante.buscaImagens()
 console.log(Vitrine.produtosArray)
 Vitrine.colocarItensNaVitrine()
 
-Vitrine.ul.addEventListener('click', adicionarAoCarrinho)
+Vitrine.ul.addEventListener('click', adicionarAoCarrinhoo)
