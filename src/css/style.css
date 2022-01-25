@@ -1,4 +1,10 @@
 :root {
+    --vermelho: #FF2253;
+    --grey-1: #F8F9FA;
+    --grey-2: #E9ECEF;
+    --grey-3: #868E96;
+    --grey-4: #212529;
+
     /* Colors */
     /* Primary Palette */
     --color-primary: #ff2253;
@@ -25,21 +31,154 @@
     --10px-size: 10px;
 
     --Bold-weight: bold;
+}
 
+html {
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     font-family: var(--Poppins);
 }
 
+button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.carrinho {
+    width: 300px;
+    margin: auto;
+}
+
+.carrinho__div__titulo {
+    background-color: var(--vermelho);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 22px;
+}
+
+.carrinho__div__titulo img {
+    height: 20px;
+}
+
+.carrinho__div__titulo h2 {
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.carrinho__div__produtos {
+    height: 400px;
+    margin-top: 6px;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+.carrinho__div__carrinho__vazio {
+    height: 100%;
+    width: 100%;
+    color: var(--grey-3);
+    background-color: var(--grey-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.carrinho__div__carrinho__vazio span {
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.carrinho__div__carrinho__vazio p {
+    width: 200px;
+    font-size: 15px;
+}
+
+.produto__card__carrinho {
+    display: flex;
+    padding: 18px 10px;
+}
+
+.produto__card__carrinho img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+}
+
+.produto__card__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    margin-left: 12px;
+}
+
+.produto__card__info h2 {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    font-size: 16px;
+}
+
+.produto__card__info span {
+    font-size: 12px;
+    color: var(--grey-3)
+}
+
+.produto__card__carrinho button {
+    background-color: var(--grey-1);
+    margin-left: 18px;
+    width: 26px;
+    height: 26px;
+    border-radius: 5px;
+}
+
+.produto__card__carrinho button img {
+    width: 10px;
+    height: 12px;
+}
+
+.carrinho__div__valor {
+    height: 20px;
+    padding: 30px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrinho__div__valor--quantidade {
+    background-color: var(--grey-1);
+}
+
+.carrinho__div__valor--total {
+    background-color: transparent;
+}
+
+
 .productsSection {
     width: 100%;
-    margin-top: 40px;
-    margin-left: 15px;
+}
+
+.products__section__container{
+    margin: auto;
+    width: 300px;
 }
 
 .filters {
-    width: 100%;
+    width: 300px;
     display: flex;
     overflow-y: scroll;
     padding-bottom: 25px;
@@ -130,8 +269,8 @@ body {
 .product {
     width: 280px;
     display: flex;
-    padding-right: 40px;
-    padding-bottom: 15px;
+    margin-right: 40px;
+    margin-bottom: 15px;
     flex-direction: column;
 }
 
@@ -179,15 +318,18 @@ body {
 .product--description {
     color: var(--Grey-3);
     font-size: var(--10px-size);
+    line-height: 16px;
 }
 
 .product--footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
 }
 
 .product--price {
-    padding-top: 20px;
+    text-align: center;
     color: var(--Grey-4);
     font-size: var(--10px-size);
     font-weight: var(--Bold-weight);
@@ -201,12 +343,16 @@ body {
 }
 
 .product--addToCart {
-    width: 15px;
-    height: 15px;
-    font-size: 20px;
+    width: 30px;
+    height: 30px;
     border-style: none;
-    border-radius: 100px;
+    border-radius: 100%;
     background-color: var(--color-secondary-50);
+    align-self: flex-end;
+}
+.product--addToCart img{
+    width: 10px;
+    height: 10px;
 }
 
 @media (min-width: 600px) {
@@ -224,4 +370,8 @@ body {
         margin-top: 40px;
         width: 70%;
     }
+}
+
+.hidden {
+    display: none;
 }
