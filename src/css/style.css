@@ -65,7 +65,9 @@ main{
 
 .header__container{
     position: relative;
-    width: 100%;
+    min-width: 300px;
+    width: 90%;
+    margin: auto;
 }
 
 .container--barraPesquisaProduto{
@@ -109,6 +111,7 @@ main{
 }
 .logo-container img{
     width: 50px;
+    margin-left: 10px;
 }
 
 .logoTxt{

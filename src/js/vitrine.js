@@ -2,7 +2,7 @@ class Vitrine {
 
     static produtosArray = []
     static ul = document.querySelector('.productList')
-    
+
 
     static criarTemplate({ id, nome, preco, categoria, descricao, imagem }) {
 
@@ -26,16 +26,16 @@ class Vitrine {
         const pPrice = document.createElement('p')
         const button = document.createElement('button')
         const buttonIMG = document.createElement('img')
-    
+
         /* Atribuindo valores aos elementos */
-        h3.innerText            = nome
-        img.src                 = imagem
-        pSection.innerText      = categoria
-        pPrice.innerText        = `RS${preco.toFixed(2)}`
-        pDescription.innerText  = descricao
-        buttonIMG.src           = addToCart
-    
-        
+        h3.innerText = nome
+        img.src = imagem
+        pSection.innerText = categoria
+        pPrice.innerText = `RS${preco.toFixed(2)}`
+        pDescription.innerText = descricao
+        buttonIMG.src = addToCart
+
+
         if (categoria === "Panificadora") {
             imgSection.src = bread
         } else if (categoria === "Bebidas") {
@@ -45,7 +45,7 @@ class Vitrine {
         }
 
         /* Atribuindo classes aos elementos */
-    
+
         liProduct.classList.add('product')
         divProductHead.classList.add('product--head')
         figure.classList.add('product--figure')
@@ -56,7 +56,7 @@ class Vitrine {
         divFooter.classList.add('product--footer')
         pPrice.classList.add('product--price')
         button.classList.add('product--addToCart')
-    
+
         /* Adicionando elementos no template */
         figure.appendChild(img)
         divSection.appendChild(imgSection)
@@ -70,13 +70,13 @@ class Vitrine {
         divFooter.appendChild(button)
         button.appendChild(buttonIMG)
         liProduct.appendChild(divFooter)
-       
+
         //ACREDITO QUE FALTA ADICIONAR LI NA UL. VERIFICAR ANTES DE TESTAR
-    
+
         return liProduct
     }
 
-    static colocarTodosItensNaVitrine(){
+    static colocarTodosItensNaVitrine() {
         Vitrine.ul.innerHTML = ""
         Vitrine.produtosArray.forEach(item => {
             const li = Vitrine.criarTemplate(item)
@@ -84,14 +84,9 @@ class Vitrine {
         })
     }
 
-    static pesquisarItens(pesquisa){
-        let pesquisaSecao = ['panificadora', 'frutas', 'bebidas']
-        let pesquisaArray = []
-        if(!pesquisaSecao.includes(pesquisa.toLowerCase())){
-            pesquisaArray = Vitrine.produtosArray.filter((prod) => prod.nome.toLowerCase().includes(pesquisa.toLowerCase()))
-        }else{
-            pesquisaArray = Vitrine.produtosArray.filter((prod) => prod.categoria.toLowerCase() == pesquisa.toLowerCase())
-        }
+    static pesquisarItens(pesquisa) {
+        const pesquisaArray = Vitrine.produtosArray.filter((prod) => prod.nome.toLowerCase().includes(pesquisa.toLowerCase()) || prod.categoria.toLowerCase().includes(pesquisa.toLowerCase()))
+        
         Vitrine.ul.innerHTML = ""
         pesquisaArray.forEach(item => {
             const li = Vitrine.criarTemplate(item)
