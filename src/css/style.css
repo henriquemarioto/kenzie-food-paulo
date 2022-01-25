@@ -23,6 +23,10 @@ header{
     right: 0;
 }
 
+.container--barraPesquisaProduto{
+    position: relative;
+}
+
 .barraPesquisaProduto{
     width: 311px;
     height: 49px;
@@ -39,6 +43,16 @@ header{
 .searchBtn{
     background-color: #FFE9EE;
     border: #FFE9EE;
+    width: 45px;
+    height: 45px;
+    border-radius: 20px;
+    position: absolute;
+    right: 27%;
+    top: 22%;
+}
+
+.fa-search{
+    color: #FF2253;
 }
 
 .logo-container{
@@ -61,5 +75,11 @@ header{
 
 #food{
     font-size: 16px;
+}
 
+@media (max-width: 700px){
+    .logo-container{
+        margin-left:  20px;
+        margin-right: 116px;    
+    }
 }
