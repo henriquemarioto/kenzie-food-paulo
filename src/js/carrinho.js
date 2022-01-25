@@ -1,3 +1,5 @@
+import { Vitrine } from "./vitrine.js"
+
 class Carrinho {
     static arrProdutosCarrinho = []
     static ul = document.querySelector('.carrinho__produtos')
@@ -26,10 +28,18 @@ class Carrinho {
         div.appendChild(p)
         button.appendChild(imgbutton)
         li.appendChild(imgProduto)
-        li.appendChildd(div)
+        li.appendChild(div)
         li.appendChild(button)
 
         return li
+    }
+
+    static adicionarAoCarrinho(evt){
+        if(evt.target.tagName === 'BUTTON'){
+            const item = Vitrine.produtosArray.find(item => item.nome === evt.target.closest('li').querySelector('.product--title').innerText)
+            Carrinho.arrProdutosCarrinho.push(item)
+            Carrinho.preencherCarrinho()
+        }
     }
 
     static preencherCarrinho(){
@@ -38,6 +48,22 @@ class Carrinho {
             const li = Carrinho.templateProdutoCarrinho(item)
             Carrinho.ul.appendChild(li)
         })
+        Carrinho.carrinhoVazioOuNao()
+    }
+
+    static removeItemCarrinho(){
+        
+    }
+
+    static carrinhoVazioOuNao(){
+        if(Carrinho.arrProdutosCarrinho.length !== 0){
+            document.querySelector('.carrinho__div__carrinho__vazio').classList.add('hidden')
+            document.querySelector('.carrinho__div__valores').classList.remove('hidden')
+        }
+        else{
+            document.querySelector('.carrinho__div__carrinho__vazio').classList.remove('hidden')
+            document.querySelector('.carrinho__div__valores').classList.add('hidden')
+        }
     }
 }
 

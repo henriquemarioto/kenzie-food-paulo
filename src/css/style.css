@@ -192,6 +192,7 @@ button {
 .produto__card__carrinho img {
     width: 75px;
     height: 75px;
+    border-radius: 10px;
     object-fit: cover;
 }
 

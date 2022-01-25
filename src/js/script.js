@@ -4,6 +4,7 @@ import { Carrinho } from "./carrinho.js"
 
 Vitrine.produtosArray = await ApiRestaurante.buscaImagens()
 console.log(Vitrine.produtosArray)
-Vitrine.colocarItensNaVitrine()
+Vitrine.colocarTodosItensNaVitrine()
 
-Vitrine.ul.addEventListener('click', adicionarAoCarrinho)
+Vitrine.ul.addEventListener('click', Carrinho.adicionarAoCarrinho)
+

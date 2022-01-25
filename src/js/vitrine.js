@@ -76,8 +76,7 @@ class Vitrine {
         return liProduct
     }
 
-    static colocarItensNaVitrine(){
-        console.log(Vitrine.ul)
+    static colocarTodosItensNaVitrine(){
         Vitrine.ul.innerHTML = ""
         Vitrine.produtosArray.forEach(item => {
             const li = Vitrine.criarTemplate(item)
