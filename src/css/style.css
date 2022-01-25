@@ -39,6 +39,7 @@ html {
 
 body {
     font-family: var(--Poppins);
+    padding-bottom: 20px;
 }
 
 header{
@@ -220,10 +221,11 @@ button {
 
 .produto__card__carrinho button {
     background-color: var(--grey-1);
-    margin-left: 18px;
+    margin-left: auto;
     width: 26px;
     height: 26px;
     border-radius: 5px;
+    justify-self: flex-end;
 }
 
 .produto__card__carrinho button img {
