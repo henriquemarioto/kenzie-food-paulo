@@ -274,7 +274,7 @@ button {
     justify-content: center;
     border-style: none;
     border-radius: 20px;
-    border: 1px black solid;
+    /*border: 1px black solid;*/
     background-color: var(--Product-1);
 }
 
