@@ -15,7 +15,6 @@ async function getAPIArray() {
 
 const variavelGlobal = await getAPIArray()
 
-
 /* GET */
 const getAllProducts = document.querySelector('.getAllProducts')
 const resultGet = document.querySelector('.todosProdutos')
@@ -34,38 +33,50 @@ const deleteSubmit = document.querySelector('.deleteButton')
 deleteSubmit.addEventListener("click", getDeleteInput)
 
 
-function preencherPatch() {
+function preencherGet() {
     
     console.log(variavelGlobal)
-    const patchUl = document.querySelector('.patch ul')
+    const patchUl = document.querySelector('.get ul')
+    patchUl.innerHTML = ''
 
     for (let index = 0; index < variavelGlobal.length; index++) {
         
         const li = document.createElement('li')
-        const id = document.createElement('input')
-        const nome = document.createElement('input')
-        const preco = document.createElement('input')
-        const categoria = document.createElement('input')
-        const descricao = document.createElement('input')
-        const imagem = document.createElement('input')
+        const id = document.createElement('p')
+        const nome = document.createElement('p')
+        const preco = document.createElement('p')
+        const categoria = document.createElement('p')
+        const descricao = document.createElement('p')
+        const imagem = document.createElement('p')
+        const button = document.createElement('button')
+        const hr = document.createElement('hr')
 
-        id.value = variavelGlobal[index].id
-        nome.value = variavelGlobal[index].nome
-        preco.value = variavelGlobal[index].preco
-        categoria.value = variavelGlobal[index].categoria
-        descricao.value = variavelGlobal[index].descricao
-        imagem.value = variavelGlobal[index].imagem
+        id.innerText = variavelGlobal[index].id
+        nome.innerText = variavelGlobal[index].nome
+        preco.innerText = variavelGlobal[index].preco
+        categoria.innerText = variavelGlobal[index].categoria
+        descricao.innerText = variavelGlobal[index].descricao
+        imagem.innerText = variavelGlobal[index].imagem
+        button.innerText = 'Enviar'
 
+        id.setAttribute('disable', 'disable')
+
+        li.appendChild(hr)
         li.appendChild(id)
         li.appendChild(nome)
         li.appendChild(preco)
         li.appendChild(categoria)
         li.appendChild(descricao)
         li.appendChild(imagem)
+        li.appendChild(button)
+        
+        patchUl.appendChild(li)
 
     }
 
 }
+
+preencherGet()
 
 /* POST */
 async function getPostInput() {
@@ -95,7 +106,7 @@ async function getPostInput() {
             body: JSON.stringify(obj)
         })
         .then(res => res.json())
-    getFullArray()
+    
 }
 
 /* PATCH */
@@ -114,21 +125,26 @@ async function getPatchInput() {
         "imagem": `${patchDescricao.value}`,
         "descricao": `${patchLink.value}`
     }
-
-    console.log(obj)
-
-
-    let a = await fetch(`https://kenzie-food-api.herokuapp.com/my/product/${patchid.value}`, {
+    
+    let res = await fetch(`https://kenzie-food-api.herokuapp.com/my/product/${patchid.value}`, {
         headers: {
             Authorization: `Bearer ${token}`,
             "Content-type": "application/json; charset=UTF-8",
-            'Access-Control-Allow-Origin': `https://kenzie-food-api.herokuapp.com/my/product/${patchid.value}`
         },
         method: 'PATCH',
         body: JSON.stringify(obj)
-    })
-    getFullArray()
+    }).then(res => res.json())
+
+    console.log(res)
+
+    patchid.value = ''
+    patchName.value = ''
+    patchPreco.value = ''
+    patchCategoria.value = ''
+    patchDescricao.value = ''
+    patchLink.value = ''
 }
+
 
 /* DELETE */
 async function getDeleteInput() {
@@ -142,5 +158,8 @@ async function getDeleteInput() {
             method: 'delete',
         })
         .then(res => console.log(res))
-    getFullArray()
+    
+    console.log(a)
+
+    id.value = ''
 }
