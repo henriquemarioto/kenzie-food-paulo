@@ -16,22 +16,22 @@
 </head>
 
 <body>
-        <header>
-            <div class="header__container">
-                <div class="logo-container">
-                    <img src="./src/img/red-dish-logo.png" alt="">
-                    <div class='logo-container--container'>
-                        <span class='logoTxt' id='kenzie'>Kenzie</span> <span class='logoTxt' id='food'>Food</span>
-                    </div>
+    <header>
+        <div class="header__container">
+            <div class="logo-container">
+                <img src="./src/img/red-dish-logo.png" alt="">
+                <div class='logo-container--container'>
+                    <span class='logoTxt' id='kenzie'>Kenzie</span> <span class='logoTxt' id='food'>Food</span>
                 </div>
-    
-                <form action="" class="container--barraPesquisaProduto">
-                    <input class="barraPesquisaProduto" type="text" placeholder="Pesquisar por produto">
-                    <button class='searchBtn'><i class="fa fa-search"></i></button>
-                </form>       
             </div>
-            
-        </header>
+
+            <div action="" class="container--barraPesquisaProduto">
+                <input class="barraPesquisaProduto" type="text" placeholder="Pesquisar por produto">
+                <button class='searchBtn'><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+
+    </header>
     <div class="full__container">
         <main>
             <section class="productsSection">
@@ -50,96 +50,26 @@
                     </div>
 
                     <div class="productList">
-                        <div class="product">
-                            <div class="product--head">
-                                <figure class="product--figure">
-                                    <img class="product--img"
-                                        src="https://istoe.com.br/wp-content/uploads/sites/14/2021/09/carro-2-1280x720.jpg"
-                                        alt="" />
-                                    <p class="product--section">
-                                        <img src="./src/img/bread.svg" /> Panificadora
-                                    </p>
-                                </figure>
-                            </div>
-                            <p class="product--title">Corola voador</p>
-                            <p class="product--description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim at
-                                rerum, obcaecati odit voluptate, iure delectus, blanditiis commodi
-                                eum minus saepe fugiat ducimus esse libero adipisci corrupti! Quo,
-                                nulla iusto?
-                            </p>
-                            <div class="product--footer">
-                                <p class="product--price">$500,00</p>
-                                <button class="product--addToCart"><img src="src/img/addToCart.svg" alt=""></button>
-                            </div>
-                        </div>
-                        
-                        <div class="product">
-                            <div class="product--head">
-                                <figure class="product--figure">
-                                    <img class="product--img"
-                                        src="https://istoe.com.br/wp-content/uploads/sites/14/2021/09/carro-2-1280x720.jpg"
-                                        alt="" />
-                                    <p class="product--section">
-                                        <img src="./src/img/bread.svg" /> Panificadora
-                                    </p>
-                                </figure>
-                            </div>
-                            <p class="product--title">Corola voador</p>
-                            <p class="product--description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim at
-                                rerum, obcaecati odit voluptate, iure delectus, blanditiis commodi
-                                eum minus saepe fugiat ducimus esse libero adipisci corrupti! Quo,
-                                nulla iusto?
-                            </p>
-                            <div class="product--footer">
-                                <p class="product--price">$500,00</p>
-                                <button class="product--addToCart"><img src="src/img/addToCart.svg" alt=""></button>
-                            </div>
-                        </div>
-        
-                        <div class="product">
-                            <div class="product--head">
-                                <figure class="product--figure">
-                                    <img class="product--img"
-                                        src="https://istoe.com.br/wp-content/uploads/sites/14/2021/09/carro-2-1280x720.jpg"
-                                        alt="" />
-                                    <p class="product--section">
-                                        <img src="./src/img/bread.svg" /> Panificadora
-                                    </p>
-                                </figure>
-                            </div>
-                            <p class="product--title">Corola voador</p>
-                            <p class="product--description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim at
-                                rerum, obcaecati odit voluptate, iure delectus, blanditiis commodi
-                                eum minus saepe fugiat ducimus esse libero adipisci corrupti! Quo,
-                                nulla iusto?
-                            </p>
-                            <div class="product--footer">
-                                <p class="product--price">$500,00</p>
-                                <button class="product--addToCart"><img src="src/img/addToCart.svg" alt=""></button>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
-                
+
             </section>
-    
+
             <aside>
-                <div class=" carrinho ">
+                <div class="carrinho">
                     <div class="carrinho__div__titulo ">
                         <img src="src/img/carrinho.svg " alt="Imagen Carrinho ">
                         <h2>Carrinho</h2>
                     </div>
-    
+
                     <div class="carrinho__div__produtos ">
                         <div class="carrinho__div__carrinho__vazio ">
                             <img src="src/img/shopping-bag.svg " alt="Sacola de compras ">
                             <span>Ops!</span>
                             <p>Por enquanto não temos produtos no carrinho</p>
                         </div>
-    
+
                         <ul class="carrinho__produtos ">
                             <!-- <div class="produto__card__carrinho ">
                                     <img src="src/img/panqueca.png " alt=" ">
@@ -152,22 +82,22 @@
                                 </div> -->
                         </ul>
                     </div>
-    
+
                     <div class="carrinho__div__valores hidden ">
                         <div class="carrinho__div__valor carrinho__div__valor--quantidade ">
                             <p>Quantidade</p>
-                            <p>5</p>
+                            <p id="quantidade">5</p>
                         </div>
-    
+
                         <div class="carrinho__div__valor carrinho__div__valor--total ">
                             <p>Total</p>
-                            <p>R$50,00</p>
+                            <p id="total">R$50,00</p>
                         </div>
                     </div>
                 </div>
             </aside>
         </main>
-    
+
         <footer></footer>
     </div>
 

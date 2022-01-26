@@ -3,19 +3,11 @@ import { Vitrine } from "./vitrine.js"
 import { Carrinho } from "./carrinho.js"
 
 const input = document.querySelector('.barraPesquisaProduto')
-const button = document.querySelector('.searchBtn')
-const filtersBtn1 = document.getElementById("filters--button_1")
-const filtersBtn2 = document.getElementById("filters--button_2")
-const filtersBtn3 = document.getElementById("filters--button_3")
-const filtersBtn4 = document.getElementById("filters--button_4")
-let selecionado = filtersBtn1
 
 Vitrine.produtosArray = await ApiRestaurante.buscaImagens()
 console.log(Vitrine.produtosArray)
-Vitrine.colocarItensNaVitrine()
 
-button.addEventListener('click', (evt) => {
-    selecionado.style.border = 'none'
+input.addEventListener('keyup', (evt) => {
     evt.preventDefault()
     Vitrine.pesquisarItens(input.value)
 })
@@ -29,7 +21,7 @@ filtersBtn1.addEventListener('click', (evt) => {
     filtersBtn1.classList.add()
 })
 
-filtersBtn2.addEventListener('click', (evt) =>{
+filtersBtn2.addEventListener('click', (evt) => {
     selecionado.style.border = 'none'
     selecionado = filtersBtn2
     selecionado.style.border = '1px solid black'
@@ -37,7 +29,7 @@ filtersBtn2.addEventListener('click', (evt) =>{
     Vitrine.pesquisarItens('Panificadora')
 })
 
-filtersBtn3.addEventListener('click', (evt) =>{
+filtersBtn3.addEventListener('click', (evt) => {
     selecionado.style.border = 'none'
     selecionado = filtersBtn3
     selecionado.style.border = '1px solid black'
@@ -45,7 +37,7 @@ filtersBtn3.addEventListener('click', (evt) =>{
     Vitrine.pesquisarItens('Frutas')
 })
 
-filtersBtn4.addEventListener('click', (evt) =>{
+filtersBtn4.addEventListener('click', (evt) => {
     selecionado.style.border = 'none'
     selecionado = filtersBtn4
     selecionado.style.border = '1px solid black'
@@ -56,3 +48,13 @@ filtersBtn4.addEventListener('click', (evt) =>{
 //Vitrine.ul.addEventListener('click', adicionarAoCarrinho)
 
 
+const iniciarSite = async () => {
+    Vitrine.produtosArray = await ApiRestaurante.buscaImagens()
+    Vitrine.colocarTodosItensNaVitrine()
+    Carrinho.preencherCarrinho()
+}
+iniciarSite()
+
+
+Vitrine.ul.addEventListener('click', Carrinho.adicionarAoCarrinho)
+Carrinho.ul.addEventListener('click', Carrinho.removeItemCarrinho)
