@@ -13,19 +13,19 @@ class Vitrine {
         const addToCart = "./src/img/addToCart.svg"
 
         /* Criando elementos do HTML */
-        const liProduct = document.createElement('li')
-        const divProductHead = document.createElement('div')
-        const figure = document.createElement('figure')
-        const img = document.createElement('img')
-        const divSection = document.createElement('div')
-        const imgSection = document.createElement('img')
-        const pSection = document.createElement('p')
-        const h3 = document.createElement('h3')
-        const pDescription = document.createElement('p')
-        const divFooter = document.createElement('div')
-        const pPrice = document.createElement('p')
-        const button = document.createElement('button')
-        const buttonIMG = document.createElement('img')
+        const liProduct         = document.createElement('li')
+        const divProductHead    = document.createElement('div')
+        const figure            = document.createElement('figure')
+        const img               = document.createElement('img')
+        const divSection        = document.createElement('div')
+        const imgSection        = document.createElement('img')
+        const pSection          = document.createElement('p')
+        const h3                = document.createElement('h3')
+        const pDescription      = document.createElement('p')
+        const divFooter         = document.createElement('div')
+        const pPrice            = document.createElement('p')
+        const button            = document.createElement('button')
+        const buttonIMG         = document.createElement('img')
 
         /* Atribuindo valores aos elementos */
         h3.innerText = nome
@@ -86,7 +86,7 @@ class Vitrine {
 
     static pesquisarItens(pesquisa) {
         const pesquisaArray = Vitrine.produtosArray.filter((prod) => prod.nome.toLowerCase().includes(pesquisa.toLowerCase()) || prod.categoria.toLowerCase().includes(pesquisa.toLowerCase()))
-        
+
         Vitrine.ul.innerHTML = ""
         pesquisaArray.forEach(item => {
             const li = Vitrine.criarTemplate(item)
