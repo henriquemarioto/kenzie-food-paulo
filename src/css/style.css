@@ -48,18 +48,21 @@ header {
 }
 
 .full__container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    
 }
 
 main {
     min-width: 300px;
     width: 90%;
+    padding-top: 150px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
 }
 
 .header__container {
     width: 90%;
+    max-width: 1200px;
     margin: auto;
     min-width: 300px;
     position: relative;
@@ -67,6 +70,7 @@ main {
 
 .container--barraPesquisaProduto {
     padding: 7px;
+    margin: auto;
     width: 300px;
     height: 47px;
     max-height: 47px;
@@ -95,13 +99,13 @@ main {
 }
 
 .searchBtn {
-    left: 256px;
-    width: 38px;
-    height: 38px;
+    left: 246px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 100%;
     background-color: var(--color-primary-50);
-    position: absolute;
+    
 }
 
 .searchBtn:hover {
@@ -147,6 +151,7 @@ button {
 
 .carrinho {
     width: 300px;
+    margin: auto;
 }
 
 .carrinho__div__titulo {
@@ -267,26 +272,18 @@ button {
 }
 
 .productsSection {
-    padding-top: 150px;
     width: 100%;
 }
-
-.products__section__container {}
 
 
 /* voltar e editar depois */
 .filters {
-    height: 45px;
-    min-height: 60px;
+    display: flex;
     overflow-y: hidden;
     overflow-x: visible;
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding-left: 5px;
-    padding-bottom: 25px;
-    padding-top: 5px;
-    border: 1px solid violet;
 }
 
 #filters--button_1 {
@@ -375,10 +372,10 @@ button {
 
 .product {
     width: 280px;
+    padding-top: 30px;
     display: flex;
-    margin-right: 40px;
-    margin-bottom: 15px;
     flex-direction: column;
+    margin-right: 20px;
 }
 
 .product--head {
@@ -386,26 +383,18 @@ button {
     padding-bottom: 30px;
 }
 
-.product--figure {
-    width: 290px;
-    height: 197px;
-    position: relative;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    background-color: var(--color-primary-50);
-}
-
-.product--figure:hover {
-    background-color: var(--color-primary);
-}
-
 .product--img {
     width: 280px;
     height: 187px;
+    border: 5px solid var(--color-primary-50);
     margin: auto auto;
     object-fit: cover;
     border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.product--img:hover{
+    border-color: var(--color-primary);
 }
 
 .product--section {
@@ -476,14 +465,51 @@ button {
 
 @media (min-width: 600px) {
     /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    header{
+        box-shadow: 0px 4px 20px 0px rgba(0,0,0,0.05);
+        padding: 10px 0;
+    }
+    .header__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .container--barraPesquisaProduto{
+        margin: 0;
+    }
+    main{
+        padding-top: 100px;
+    }
 }
 
-@media (min-width: 801px) {
+@media (min-width: 800px) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .productList {
+        flex-wrap: wrap;
+        max-width: 600px;
+        margin: auto;
+    }
+    .carrinho{
+        padding-top: 30px;
+    }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     /* big landscape tablets, laptops, and desktops */
+    main{
+        display: flex;
+        justify-content: space-between;
+    }
+    .productList{
+        max-width: 900px;
+        justify-content: space-evenly;
+    }
+    .productsSection{
+        max-width: 900px;
+    }
+    .carrinho{
+        padding-top: 0;
+    }
 }
 
 .hidden {
