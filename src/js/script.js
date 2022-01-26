@@ -19,7 +19,7 @@ button.addEventListener('click', (evt) => {
 
 filtersBtn1.addEventListener('click', (evt) => {
     evt.preventDefault()
-    Vitrine.colocarItensNaVitrine()
+    Vitrine.colocarTodosItensNaVitrine()
 })
 
 filtersBtn2.addEventListener('click', (evt) =>{
