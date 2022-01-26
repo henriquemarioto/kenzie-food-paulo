@@ -36,7 +36,7 @@ class Carrinho {
     }
 
     static adicionarAoCarrinho(evt){
-        if(evt.target.tagName === 'BUTTON'){
+        if(Carrinho.validarClick(evt)){
             const item = Vitrine.produtosArray.find(item => item.nome === evt.target.closest('li').querySelector('.product--title').innerText)
 
             if(Carrinho.pegarArrProdutos() === null || Carrinho.pegarArrProdutos() === 'null'){
@@ -49,6 +49,18 @@ class Carrinho {
             
             Carrinho.preencherCarrinho()
         }
+    }
+
+    static validarClick(evt){
+        if(evt.target.tagName === 'BUTTON'){
+            return true
+        }
+        if(evt.target.tagName === 'IMG'){
+            if(evt.target.parentNode.tagName === 'BUTTON'){
+                return true
+            }
+        }
+        return false
     }
 
     static preencherCarrinho(){
@@ -66,7 +78,7 @@ class Carrinho {
     }
 
     static removeItemCarrinho(event){
-        if(event.target.tagName === 'BUTTON'){
+        if(Carrinho.validarClick(event)){
             const li = event.target.closest('li')
             const index = li.getAttribute('index')
             const arrProdutos = Carrinho.pegarArrProdutos()
