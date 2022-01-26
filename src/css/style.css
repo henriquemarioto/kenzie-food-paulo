@@ -90,14 +90,14 @@ main {
 
 .barraPesquisaProduto:focus {
     height: 45px;
+    padding-right: 100px;
     border: 1px solid transparent;
-    padding-right: 40px;
 }
 
 .searchBtn {
-    left: 246px;
-    width: 45px;
-    height: 45px;
+    left: 256px;
+    width: 38px;
+    height: 38px;
     cursor: pointer;
     border-radius: 20px;
     background-color: var(--color-primary-50);
@@ -273,13 +273,20 @@ button {
 
 .products__section__container {}
 
+
+/* voltar e editar depois */
 .filters {
-    height: 65px;
-    display: flex;
+    height: 45px;
+    min-height: 60px;
     overflow-y: hidden;
     overflow-x: visible;
+    display: flex;
+    align-items: center;
     flex-direction: row;
+    padding-left: 5px;
     padding-bottom: 25px;
+    padding-top: 5px;
+    border: 1px solid violet;
 }
 
 #filters--button_1 {
@@ -294,7 +301,6 @@ button {
     justify-content: center;
     border-style: none;
     border-radius: 20px;
-    border: 1px black solid;
     background-color: var(--Product-1);
 }
 
