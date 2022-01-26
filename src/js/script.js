@@ -51,3 +51,4 @@ iniciarSite()
 Vitrine.ul.addEventListener('click', Carrinho.adicionarAoCarrinho)
 Carrinho.ul.addEventListener('click', Carrinho.removeItemCarrinho)
 
+
