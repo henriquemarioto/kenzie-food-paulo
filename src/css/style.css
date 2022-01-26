@@ -57,6 +57,7 @@ main {
     padding-top: 150px;
     max-width: 1200px;
     margin: auto;
+    position: relative;
 }
 
 .header__container {
@@ -474,9 +475,6 @@ button {
     }
     .container--barraPesquisaProduto{
         margin: 0;
-    }
-    body{
-        background-color: var(--grey-1);
     }
     main{
         padding-top: 100px;
