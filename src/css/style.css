@@ -93,9 +93,12 @@ main {
 }
 
 .barraPesquisaProduto:focus {
-    height: 45px;
-    padding-right: 100px;
-    border: 1px solid transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 47px;
+    box-sizing: border-box;
 }
 
 .searchBtn {
@@ -105,20 +108,21 @@ main {
     cursor: pointer;
     border-radius: 100%;
     background-color: var(--color-primary-50);
-    
+    transition: 0.2s;
+    margin-left: auto;
 }
 
 .searchBtn:hover {
     background-color: var(--color-primary);
 }
 
+.searchBtn:hover .fa-search{
+    color: var(--color-primary-50)
+}
+
 
 .fa-search {
     color: var(--color-primary);
-}
-
-.fa-search:hover {
-    color: var(--color-primary-50)
 }
 
 .logo-container {
@@ -246,6 +250,14 @@ button {
     border-radius: 5px;
     justify-self: flex-end;
     background-color: var(--grey-1);
+    transition: 0.2s;
+}
+.produto__card__carrinho button:hover{
+    background-color: var(--grey-3);
+}
+
+.produto__card__carrinho button:hover img{
+    filter: brightness(3)
 }
 
 .produto__card__carrinho button img {
@@ -284,25 +296,30 @@ button {
     display: flex;
     align-items: center;
     flex-direction: row;
+    padding: 1px;
+    transition: 0.2s;
+}
+
+.filters button{
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.filters button:hover{
+    border: 1px solid black;
+    transition: 0.2s;
 }
 
 #filters--button_1 {
-    width: 60px;
-    height: 30px;
+    padding: 5px;
     min-width: 60px;
-    cursor: pointer;
-    border-style: none;
-    border-radius: 20px;
+    
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    border-style: none;
-    border-radius: 20px;
     background-color: var(--Product-1);
-}
-
-#filters--button_1:hover {
-    outline: 1px solid black;
 }
 
 #filters--button_2 {
@@ -314,13 +331,8 @@ button {
     margin-left: 20px;
     align-items: center;
     justify-content: space-around;
-    border-style: none;
     border-radius: 20px;
     background-color: var(--Product-2);
-}
-
-#filters--button_2:hover {
-    border: 1px solid black;
 }
 
 #filters--button_3 {
@@ -329,16 +341,11 @@ button {
     min-width: 90px;
     margin-left: 20px;
     cursor: pointer;
-    border-style: none;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     background-color: var(--Product-3);
-}
-
-#filters--button_3:hover {
-    border: 1px solid black;
 }
 
 #filters--button_4 {
@@ -348,17 +355,11 @@ button {
     min-width: 100px;
     cursor: pointer;
     margin-left: 20px;
-    margin-right: 20px;
-    border-style: none;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     background-color: var(--Product-4);
-}
-
-#filters--button_4:hover {
-    border: 1px solid black;
 }
 
 .productList {
@@ -376,6 +377,7 @@ button {
     display: flex;
     flex-direction: column;
     margin-right: 20px;
+    transition: 1s;
 }
 
 .product--head {
@@ -391,10 +393,12 @@ button {
     object-fit: cover;
     border-radius: 6px;
     box-sizing: border-box;
+    transition: 0.2s;
 }
 
 .product--img:hover{
     border-color: var(--color-primary);
+    transition: 0.2s;
 }
 
 .product--section {
@@ -452,11 +456,21 @@ button {
     border-radius: 100%;
     align-self: flex-end;
     background-color: var(--color-secondary-50);
+    transition: 0.2s;
+}
+
+.product--addToCart:hover {
+    background-color: var(--color-secondary);
+    cursor: pointer;
 }
 
 .product--addToCart img {
     width: 10px;
     height: 10px;
+}
+
+.product--addToCart:hover img{
+    filter: brightness(4);
 }
 
 @media (min-width: 420px) {
