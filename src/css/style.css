@@ -156,6 +156,8 @@ button {
 .carrinho {
     width: 300px;
     margin: auto;
+    position: sticky;
+    top: 0px;
 }
 
 .carrinho__div__titulo {
