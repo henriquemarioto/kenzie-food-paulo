@@ -5,17 +5,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./apiExtra.css">
+    <link rel="stylesheet" href="./apiExtra.css" />
     <title>Document</title>
 </head>
 
 <body>
-    <style>
-        body {
-            font-family: inter;
-        }
-    </style>
-
     <div class="get">
         <h2>GET</h2>
         <button class="getAllProducts">Todos os produtos</button>
@@ -24,30 +18,22 @@
     <hr />
     <div class="post">
         <h2>POST</h2>
-        <div>
-            <label for="nome">Nome:</label><br />
-            <input type="text" id="postNome" />
-        </div>
-        <div>
-            <label for="number">Preco:</label><br />
-            <input type="number" id="postPreco" />
-        </div>
-        <div>
-            <label for="categoria">Categoria:</label><br />
-            <input type="text" id="postCategoria" />
-        </div>
-        <div>
-            <label for="descricao">Descrição:</label><br />
-            <input type="text" id="postDescricao" />
-        </div>
-        <div>
-            <label for="linkIMG">Link imagem:</label><br />
-            <input type="text" id="postLinkIMG" />
-        </div>
-        <br />
-        <div>
-            <button class="postButton" type="submit">Enviar sua mensagem</button>
-        </div>
+        <ul>
+            <li>
+                <label for="nome">Nome:</label><br />
+                <input type="text" id="postNome" />
+                <label for="number">Preco:</label><br />
+                <input type="number" id="postPreco" />
+                <label for="categoria">Categoria:</label><br />
+                <input type="text" id="postCategoria" />
+                <label for="descricao">Descrição:</label><br />
+                <input type="text" id="postDescricao" />
+                <label for="linkIMG">Link imagem:</label><br />
+                <input type="text" id="postLinkIMG" />
+                <br />
+                <button class="postButton" type="submit">Enviar sua mensagem</button>
+            </li>
+        </ul>
     </div>
     <hr />
     <div class="patch">
@@ -66,7 +52,7 @@
                 <input type="text" id="patchDescricao" />
                 <label for="linkIMG">Link imagem:</label>
                 <input type="text" id="patchLinkIMG" />
-                <br>
+                <br />
                 <button class="patchButton" type="submit">Enviar</button>
             </li>
         </ul>
@@ -74,13 +60,14 @@
     <hr />
     <div class="delete">
         <h2>DELETE</h2>
-        <div>
-            <label for="nome">ID:</label><br />
-            <input type="number" id="deleteIdNumber" />
-        </div>
-        <div>
-            <button class="deleteButton" type="submit">Enviar</button>
-        </div>
+        <ul>
+            <li>
+                <label for="nome">ID:</label><br />
+                <input type="number" id="deleteIdNumber" />
+                <br>
+                <button class="deleteButton" type="submit">Enviar</button>
+            </li>
+        </ul>
     </div>
     <script type="module" src="./apiExtra.js"></script>
 </body>
