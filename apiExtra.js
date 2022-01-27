@@ -1,4 +1,6 @@
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTY0MzExNjkxNiwiZXhwIjoxNjQzOTgwOTE2LCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.KDWjO4BI-xRPROm-D9Inhaix9fJwxlEU5qTyu32kzfU"
+
+
 /* GET */
 async function getAPIArray() {
     return fetch('https://kenzie-food-api.herokuapp.com/my/product', {
@@ -11,14 +13,14 @@ async function getAPIArray() {
     })
     .then(res => res.json())
         
+    
 }
 
-const variavelGlobal = await getAPIArray()
 
 /* GET */
 const getAllProducts = document.querySelector('.getAllProducts')
 const resultGet = document.querySelector('.todosProdutos')
-getAllProducts.addEventListener('click', getAPIArray)
+getAllProducts.addEventListener('click', preencherGet)
 
 /* POST */
 const postSubmit = document.querySelector('.postButton')
@@ -33,13 +35,13 @@ const deleteSubmit = document.querySelector('.deleteButton')
 deleteSubmit.addEventListener("click", getDeleteInput)
 
 
-function preencherGet() {
+async function preencherGet() {
+    let resultArray = await getAPIArray()
     
-    console.log(variavelGlobal)
     const patchUl = document.querySelector('.get ul')
     patchUl.innerHTML = ''
 
-    for (let index = 0; index < variavelGlobal.length; index++) {
+    for (let index = 0; index < resultArray.length; index++) {
         
         const li = document.createElement('li')
         const id = document.createElement('p')
@@ -51,12 +53,12 @@ function preencherGet() {
         const button = document.createElement('button')
         const hr = document.createElement('hr')
 
-        id.innerText = variavelGlobal[index].id
-        nome.innerText = variavelGlobal[index].nome
-        preco.innerText = variavelGlobal[index].preco
-        categoria.innerText = variavelGlobal[index].categoria
-        descricao.innerText = variavelGlobal[index].descricao
-        imagem.innerText = variavelGlobal[index].imagem
+        id.innerText = resultArray[index].id
+        nome.innerText = resultArray[index].nome
+        preco.innerText = resultArray[index].preco
+        categoria.innerText = resultArray[index].categoria
+        descricao.innerText = resultArray[index].descricao
+        imagem.innerText = resultArray[index].imagem
         button.innerText = 'Enviar'
 
         id.setAttribute('disable', 'disable')
@@ -107,6 +109,9 @@ async function getPostInput() {
         })
         .then(res => res.json())
     
+
+
+
 }
 
 /* PATCH */
